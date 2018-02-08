@@ -60,13 +60,13 @@ function draw(){
 	drawPaddle1();
 	drawPaddle2();
 	
-	//Controlling The Paddle
+	//Controlling The Paddle 1
 	if(rightPressed && paddleX1<canvas.width-paddleWidth){
 		paddleX1+=7;
 	}else if(leftPressed && paddleX1>0){
 		paddleX1-=7;
 	}
-	
+	//Controlling Paddle 2
 	if(rightP2 &&paddleX2<canvas.width-paddleWidth){
 		paddleX2+=7;
 	}else if(leftP2&&paddleX2>0){
@@ -77,6 +77,7 @@ function draw(){
 			if(x>paddleX2&&x<paddleX2+paddleWidth){
 				dy = -dy;
 			}else{
+				alert("Player 1 Wins!!!!");
 				reset();
 			}
 			
@@ -89,6 +90,8 @@ function draw(){
 		if(x>paddleX1&&x<paddleX1+paddleWidth){
 			dy=-dy;
 		}else{
+			
+			alert("Player 2 Wins!!!");
 			reset();
 		}
 		//document.location.reload();
